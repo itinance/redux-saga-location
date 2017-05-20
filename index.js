@@ -1,5 +1,5 @@
 /**
- * redux-saga-rn-alert
+ * redux-saga-location
  * @flow
  */
 
