@@ -57,7 +57,7 @@ yield call(getCurrentPosition)
 
 The received data is the same as from [navigator.geolocation.getCurrentPosition](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition).
 
-We can listen to the event in our reducers per "REDUX-SAGA-LOCATION-SET-POSITION", while errors can be detected with "REDUX-SAGA-LOCATION-SET-ERROR".
+We can listen to the event in our reducers per "REDUX_SAGA_LOCATION_SET_POSITION", while errors can be detected with "REDUX_SAGA_LOCATION_SET_ERROR".
 
 If we want to use constans for the actions, we can import them with:
 
