@@ -1,6 +1,8 @@
-(WIP!!! - Work in progress )
-
 # redux-saga-location
+
+GeoLocation within 'redux-saga'-context.
+
+This library helps along to fetch geo-location within a saga (or any other generator function) and put the result into the redux-store.
 
 # Installation
 
