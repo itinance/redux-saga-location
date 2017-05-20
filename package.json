@@ -1,0 +1,29 @@
+{
+  "name": "redux-saga-location",
+  "version": "0.0.1",
+  "description": "Location-support for reduy-saga",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "flow": "flow; test $? -eq 0 -o $? -eq 2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:itinance/redux-saga-location"
+  },
+  "keywords": [
+    "react-native-component",
+    "redux-saga",
+    "redux-saga-channels",
+    "geolocation",
+    "side-effect"
+  ],
+  "author": "Hagen Huebel <hhuebel@itinance.com> (hhuebel@itinance.com)",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "flow-bin": "0.28.0",
+    "react": "^15.4.2",
+    "react-native": "^0.40.0"
+  }
+}
