@@ -62,7 +62,7 @@ We can listen to the event in our reducers per "REDUX-SAGA-LOCATION-SET-POSITION
 If we want to use constans for the actions, we can import them with:
 
 ```javascript
-import {ACTION_SET_POSITION, ACTION_SET_ERROR} from 'redux-saga-location/actions';
+import {REDUX_SAGA_LOCATION_ACTION_SET_POSITION, REDUX_SAGA_LOCATION_ACTION_SET_ERROR} from 'redux-saga-location/actions';
 ```
 
 We'll find the result in our redux-store like this:
