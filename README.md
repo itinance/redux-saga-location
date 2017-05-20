@@ -71,4 +71,4 @@ We'll find the result in our redux-store like this:
 
 ## Contribution:
 
-Contributors are welcome! Feel free to submit pull requests or open [discussions](https://github.com/itinance/redux-saga-rn-alert/issues).
+Contributors are welcome! Feel free to submit pull requests or open [discussions](https://github.com/itinance/redux-saga-location/issues).
