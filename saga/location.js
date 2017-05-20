@@ -9,8 +9,6 @@ import {ACTION_SET_POSITION, ACTION_SET_ERROR} from '../actions';
 export function * watchLocationChannel() {
   while (true) {
     const action = yield take(locationChannel)
-
-    console.log("****", action)
     yield put(action)
   }
 }
