@@ -54,6 +54,8 @@ yield call(getCurrentPosition)
 ```
 
 The received data is the same as from [navigator.geolocation.getCurrentPosition](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition).
+We'll find the result in our redux-store like this:
+
 
 ![alt text](https://github.com/itinance/redux-saga-location/blob/master/instructions/redux-saga-location.png?raw=true)
 
