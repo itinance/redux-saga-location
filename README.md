@@ -47,14 +47,24 @@ export default function * rootSaga() {
 
 # Usage
 
-We call `getCurrentPositio` according to the [web-standard-method](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition) and (if user permits) the current position will be put into the redux store.
+We call `getCurrentPosition` according to the [web-standard-method](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition) and (if user permits) the current position will be put into the redux store.
 
 ```javascript
 yield call(getCurrentPosition)
 ```
 
 The received data is the same as from [navigator.geolocation.getCurrentPosition](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition).
+
+We can listen to the event in our reducers per "REDUX-SAGA-LOCATION-SET-POSITION", while errors can be detected with "REDUX-SAGA-LOCATION-SET-ERROR".
+
+If we want to use constans for the actions, we can import them with:
+
+```javascript
+import {ACTION_SET_POSITION, ACTION_SET_ERROR} from 'redux-saga-location/actions';
+```
+
 We'll find the result in our redux-store like this:
+
 
 
 ![alt text](https://github.com/itinance/redux-saga-location/blob/master/instructions/redux-saga-location.png?raw=true)
