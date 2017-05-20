@@ -1,1 +1,2 @@
-export { ACTION_SET_POSITION, ACTION_SET_ERROR } from './actions/index';
+export { REDUX_SAGA_LOCATION_ACTION_SET_POSITION
+    , REDUX_SAGA_LOCATION_ACTION_SET_ERROR } from './actions/index';

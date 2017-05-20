@@ -4,7 +4,8 @@ import { take, put, call } from 'redux-saga/effects';
 
 export const locationChannel = channel()
 
-import {ACTION_SET_POSITION, ACTION_SET_ERROR} from '../actions';
+import {REDUX_SAGA_LOCATION_ACTION_SET_POSITION
+    , REDUX_SAGA_LOCATION_ACTION_SET_ERROR} from '../actions';
 
 export function * watchLocationChannel() {
   while (true) {
@@ -16,9 +17,9 @@ export function * watchLocationChannel() {
 export function * getCurrentPosition(options) {
     navigator.geolocation.getCurrentPosition(
       position => {
-        locationChannel.put({type: ACTION_SET_POSITION, position})
+        locationChannel.put({type: REDUX_SAGA_LOCATION_ACTION_SET_POSITION, position})
       },
-      (error) => locationChannel.put({type: ACTION_SET_ERROR, error}),
+      (error) => locationChannel.put({type: REDUX_SAGA_LOCATION_ACTION_SET_ERROR, error}),
       options
     );
     

@@ -1,4 +1,5 @@
-import {ACTION_SET_POSITION, ACTION_SET_ERROR} from '../actions';
+import {REDUX_SAGA_LOCATION_ACTION_SET_POSITION
+  , REDUX_SAGA_LOCATION_ACTION_SET_ERROR} from '../actions';
 
 export default function locationReducer(state = {
     position: null,
@@ -6,7 +7,7 @@ export default function locationReducer(state = {
 }, action) {
   switch(action.type) {
 
-    case ACTION_SET_POSITION: {
+    case REDUX_SAGA_LOCATION_ACTION_SET_POSITION: {
       const {position} = action;
 
       return {
@@ -16,7 +17,7 @@ export default function locationReducer(state = {
       }
     }
 
-    case ACTION_SET_ERROR : {
+    case REDUX_SAGA_LOCATION_ACTION_SET_ERROR : {
       const {error} = action;
 
       return {
