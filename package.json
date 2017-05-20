@@ -1,7 +1,7 @@
 {
   "name": "redux-saga-location",
   "version": "1.0.5",
-  "description": "Location-support for reduy-saga",
+  "description": "Location-support for redux-saga",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
