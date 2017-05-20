@@ -19,13 +19,13 @@ In the root reducer add the location-reducer. For instance:
 **reducer.js:**
 
 ```javascript
-import { locationReducer } from 'redux-saga-location';
+import { locationReducer as location } from 'redux-saga-location';
 
 const appReducer = combineReducers({
   appStates,
   routes,
   ...
-  locationReducer
+  location
 });
 ```
 
@@ -34,6 +34,9 @@ In the root saga spawn the channel watcher:
 **saga.js**
 
 ```javascript
+
+import {watchLocationChannel, getCurrentPosition} from 'redux-saga-location';
+
 export default function * rootSaga() {
   yield [
     // ... all your sagas here
@@ -44,6 +47,13 @@ export default function * rootSaga() {
 
 # Usage
 
+We call `getCurrentPositio` according to the [web-standard-method](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition) and (if user permits) the current position will be put into the redux store.
+
+```javascript
+yield call(getCurrentPosition)
+```
+
+The received data is the same as from [navigator.geolocation.getCurrentPosition](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition).
 
 ## Contribution:
 
