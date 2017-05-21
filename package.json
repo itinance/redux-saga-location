@@ -1,6 +1,6 @@
 {
   "name": "redux-saga-location",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Location-support for redux-saga",
   "main": "index.js",
   "scripts": {
