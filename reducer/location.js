@@ -1,11 +1,20 @@
 import {REDUX_SAGA_LOCATION_ACTION_SET_POSITION
-  , REDUX_SAGA_LOCATION_ACTION_SET_ERROR} from '../actions';
+  , REDUX_SAGA_LOCATION_ACTION_SET_ERROR
+  , REDUX_SAGA_LOCATION_ACTION_REQUEST} from '../actions';
 
 export default function locationReducer(state = {
     position: null,
     error: null,
+    fetching: false
 }, action) {
   switch(action.type) {
+
+    case REDUX_SAGA_LOCATION_ACTION_REQUEST: {
+      return {
+        ...state,
+        fetching: true
+      }
+    }
 
     case REDUX_SAGA_LOCATION_ACTION_SET_POSITION: {
       const {position} = action;
@@ -14,6 +23,7 @@ export default function locationReducer(state = {
         ...state,
         position,
         error: null,
+        fetching: false
       }
     }
 
@@ -23,6 +33,7 @@ export default function locationReducer(state = {
       return {
         ...state,
         error: error,
+        fetching: false
       }
     }
 
