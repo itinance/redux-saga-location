@@ -37,7 +37,7 @@ In the root saga spawn the channel watcher:
 
 ```javascript
 
-import {watchLocationChannel, getCurrentPosition} from 'redux-saga-location';
+import {watchLocationChannel, getCurrentPosition, watchCurrentPosition} from 'redux-saga-location';
 
 export default function * rootSaga() {
   yield [
@@ -49,6 +49,8 @@ export default function * rootSaga() {
 
 # Usage
 
+## Usage of getCurrentPosition
+
 We call `getCurrentPosition` according to the [web-standard-method](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition) and (if user permits) the current position will be put into the redux store.
 
 ```javascript
@@ -56,6 +58,16 @@ yield call(getCurrentPosition)
 ```
 
 The received data is the same as from [navigator.geolocation.getCurrentPosition](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition).
+
+## Usage of watchCurrentPosition
+
+We call `watchCurrentPosition` according to the [web-standard-method](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition) and (if user permits) the position will be put into the redux store as often as it gets updated.
+
+```javascript
+yield call(watchCurrentPosition)
+```
+
+The received data is the same as from [navigator.geolocation.watchPosition](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition).
 
 We can listen to the event in our reducers per "REDUX_SAGA_LOCATION_SET_POSITION", while errors can be detected with "REDUX_SAGA_LOCATION_SET_ERROR".
 
