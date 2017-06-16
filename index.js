@@ -5,5 +5,5 @@
 
 'use strict';
 
-export { watchLocationChannel, getCurrentPosition } from './saga/location';
+export { watchLocationChannel, getCurrentPosition, watchCurrentPosition } from './saga/location';
 export { default as locationReducer } from './reducer/location';
