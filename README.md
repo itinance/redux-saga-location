@@ -71,7 +71,7 @@ The received data is the same as from [navigator.geolocation.watchPosition](http
 
 We can listen to the event in our reducers per "REDUX_SAGA_LOCATION_SET_POSITION", while errors can be detected with "REDUX_SAGA_LOCATION_SET_ERROR".
 
-If we want to use constans for the actions, we can import them with:
+If we want to use constants for the actions, we can import them with:
 
 ```javascript
 import {REDUX_SAGA_LOCATION_ACTION_SET_POSITION, REDUX_SAGA_LOCATION_ACTION_SET_ERROR} from 'redux-saga-location/actions';
