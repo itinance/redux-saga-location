@@ -20,7 +20,7 @@
   ],
   "author": "Hagen Huebel <hhuebel@itinance.com> (hhuebel@itinance.com)",
   "license": "MIT",
-  "dependencies": {
+  "peerDependencies": {
     "@react-native-community/geolocation": "2.0.2"
   },
   "devDependencies": {

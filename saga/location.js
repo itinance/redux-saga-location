@@ -19,7 +19,7 @@ export function* watchLocationChannel() {
 
 export function* getCurrentPosition(options) {
   locationChannel.put({ type: REDUX_SAGA_LOCATION_ACTION_REQUEST });
-  GeoLocation.getCurrentPosition(
+  Geolocation.getCurrentPosition(
     position => {
       locationChannel.put({
         type: REDUX_SAGA_LOCATION_ACTION_SET_POSITION,
@@ -37,7 +37,7 @@ export function* getCurrentPosition(options) {
 
 export function* watchCurrentPosition(options) {
   locationChannel.put({ type: REDUX_SAGA_LOCATION_ACTION_REQUEST });
-  GeoLocation.watchPosition(
+  Geolocation.watchPosition(
     position => {
       locationChannel.put({
         type: REDUX_SAGA_LOCATION_ACTION_SET_POSITION,

@@ -7,13 +7,13 @@ This library helps along to fetch geo-location within a saga (or any other gener
 # Installation
 
 ```bash
-yarn add redux-saga-location
+yarn add redux-saga-location @react-native-community/geolocation
 ```
 
 or
 
 ```bash
-npm install redux-saga-location --save
+npm install redux-saga-location @react-native-community/geolocation --save
 ```
 
 # Setup
@@ -62,7 +62,7 @@ yield call(getCurrentPosition)
 ```
 
 The received data is the same as from [navigator.geolocation.getCurrentPosition](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition).
-Starting with react-native 0.60 navigator.geolocation has been removed and moved to [GeoLocation.getCurrentPosition](https://github.com/react-native-community/react-native-geolocation)
+Starting with react-native 0.60 navigator.geolocation has been removed and moved to [Geolocation.getCurrentPosition](https://github.com/react-native-community/react-native-geolocation)
 
 ## Usage of watchCurrentPosition
 
@@ -73,7 +73,7 @@ yield call(watchCurrentPosition)
 ```
 
 The received data is the same as from [navigator.geolocation.watchPosition](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition).
-Starting with react-native 0.60 navigator.geolocation has been removed and moved to [GeoLocation.watchPosition](https://github.com/react-native-community/react-native-geolocation)
+Starting with react-native 0.60 navigator.geolocation has been removed and moved to [Geolocation.watchPosition](https://github.com/react-native-community/react-native-geolocation)
 
 We can listen to the event in our reducers per "REDUX_SAGA_LOCATION_SET_POSITION", while errors can be detected with "REDUX_SAGA_LOCATION_SET_ERROR".
 
