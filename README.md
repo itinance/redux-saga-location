@@ -77,7 +77,7 @@ Starting with react-native 0.60 navigator.geolocation has been removed and moved
 
 We can listen to the event in our reducers per "REDUX_SAGA_LOCATION_SET_POSITION", while errors can be detected with "REDUX_SAGA_LOCATION_SET_ERROR".
 
-If we want to use constans for the actions, we can import them with:
+If we want to use constants for the actions, we can import them with:
 
 ```javascript
 import {
