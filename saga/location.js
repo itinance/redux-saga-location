@@ -1,39 +1,54 @@
-import { channel } from 'redux-saga';
-import { take, put, call } from 'redux-saga/effects';
+import { channel } from "redux-saga";
+import { take, put, call } from "redux-saga/effects";
+import Geolocation from "@react-native-community/geolocation";
 
-export const locationChannel = channel()
+export const locationChannel = channel();
 
 import {
   REDUX_SAGA_LOCATION_ACTION_SET_POSITION,
   REDUX_SAGA_LOCATION_ACTION_SET_ERROR,
   REDUX_SAGA_LOCATION_ACTION_REQUEST
-} from '../actions';
+} from "../actions";
 
-export function * watchLocationChannel() {
+export function* watchLocationChannel() {
   while (true) {
-    const action = yield take(locationChannel)
-    yield put(action)
+    const action = yield take(locationChannel);
+    yield put(action);
   }
 }
 
-export function * getCurrentPosition(options) {
-    locationChannel.put({type: REDUX_SAGA_LOCATION_ACTION_REQUEST})
-    navigator.geolocation.getCurrentPosition(
-      position => {
-        locationChannel.put({type: REDUX_SAGA_LOCATION_ACTION_SET_POSITION, position})
-      },
-      (error) => locationChannel.put({type: REDUX_SAGA_LOCATION_ACTION_SET_ERROR, error}),
-      options
-    );
+export function* getCurrentPosition(options) {
+  locationChannel.put({ type: REDUX_SAGA_LOCATION_ACTION_REQUEST });
+  GeoLocation.getCurrentPosition(
+    position => {
+      locationChannel.put({
+        type: REDUX_SAGA_LOCATION_ACTION_SET_POSITION,
+        position
+      });
+    },
+    error =>
+      locationChannel.put({
+        type: REDUX_SAGA_LOCATION_ACTION_SET_ERROR,
+        error
+      }),
+    options
+  );
 }
 
-export function * watchCurrentPosition(options) {
-    locationChannel.put({type: REDUX_SAGA_LOCATION_ACTION_REQUEST})
-    navigator.geolocation.watchPosition(
-      position => {
-        locationChannel.put({type: REDUX_SAGA_LOCATION_ACTION_SET_POSITION, position})
-      },
-      (error) => locationChannel.put({type: REDUX_SAGA_LOCATION_ACTION_SET_ERROR, error}),
-      options
-    );
+export function* watchCurrentPosition(options) {
+  locationChannel.put({ type: REDUX_SAGA_LOCATION_ACTION_REQUEST });
+  GeoLocation.watchPosition(
+    position => {
+      locationChannel.put({
+        type: REDUX_SAGA_LOCATION_ACTION_SET_POSITION,
+        position
+      });
+    },
+    error =>
+      locationChannel.put({
+        type: REDUX_SAGA_LOCATION_ACTION_SET_ERROR,
+        error
+      }),
+    options
+  );
 }
